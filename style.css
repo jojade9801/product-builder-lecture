@@ -1,1 +1,98 @@
-/* Add styles here */
+:root {
+    --background-color: #1a1a2e;
+    --card-background: #16213e;
+    --primary-text-color: #e94560;
+    --secondary-text-color: #f0f0f0;
+    --button-bg: #e94560;
+    --button-glow: rgba(233, 69, 96, 0.4);
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), 
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: var(--secondary-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    background-color: var(--card-background);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.header h1 {
+    color: var(--primary-text-color);
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.header p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.lotto-display {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+    min-height: 70px;
+}
+
+.lotto-ball {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.2);
+    animation: appear 0.5s ease-out forwards;
+    transform: scale(0);
+}
+
+@keyframes appear {
+    to {
+        transform: scale(1);
+    }
+}
+
+.generate-btn {
+    font-family: var(--font-family);
+    background-color: var(--button-bg);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px var(--button-glow);
+}
+
+.generate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 20px var(--button-glow);
+}
+
+.generate-btn:active {
+    transform: translateY(-1px);
+}
